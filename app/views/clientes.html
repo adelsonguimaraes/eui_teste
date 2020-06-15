@@ -1,0 +1,74 @@
+<div id="cliente-cc" class="easyui-layout" style="height:600px;">
+    <div data-options="region:'east',split:true,collapsed:true,title:''" style="width:400px;">
+        <section  id="cliente-form">
+            <div id="tt" class="easyui-tabs" style="width:100%;height:inherit;">
+                <div title="Dados" style="padding:20px;display:none;">
+                    <div title="Dados" data-options="closable:false" style="padding:10px">
+                        <form id="ff" method="post">
+                            <div class="form-floating-label form-field" style="margin-bottom:20px">
+                                <input type="hidden" name="index" style="width:100%">
+                            </div>
+                            <div class="form-floating-label form-field" style="margin-bottom:20px">
+                                <input type="hidden" name="id" style="width:100%">
+                            </div>
+                            <div class="form-floating-label form-field" style="margin-bottom:20px">
+                                <input class="easyui-textbox" name="nome" style="width:100%" data-options="label:'Nome:',labelPosition:'top'">
+                            </div>
+                            <div class="form-floating-label form-field" style="margin-bottom:20px">
+                                <input class="easyui-textbox" name="endereco" style="width:100%" data-options="label:'Enderço:',labelPosition:'top'">
+                            </div>
+                        </form>
+                        <div style="text-align:center;padding:5px 0">
+                            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()" style="width:80px">Salvar</a>
+                            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()" style="width:80px">Cancelar</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="tb">  
+                    Nama : <input id="namaCustomer" style="line-height:16px;border:1px solid #ccc">  
+                    ID Customer :<input id="NoIDCust" style="line-height:16px;border:1px solid #ccc">  
+                    <a href="#" class="easyui-linkbutton" plain="true" onclick="doSearch()">Cari</a>  
+                    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newCustomer()">Tambah Modul</a>  
+                    <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editCustomer()">Edit Modul</a>  
+                    <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="removeCustomer()">Hapus Modul</a>  
+                </div>
+                <div title="Contatos" data-options="closable:false" style="overflow:auto;padding:20px;display:none;">
+                    <!-- <div id="tb" style="padding:3px">
+                        <span>Item ID:</span>
+                        <input id="itemid" style="line-height:26px;border:1px solid #ccc">
+                        <span>Product ID:</span>
+                        <input id="productid" style="line-height:26px;border:1px solid #ccc">
+                        <a href="#" class="easyui-linkbutton" plain="true" onclick="doSearch()">Search</a>
+                    </div> -->
+                    <table id="cliente-contatos-table" class="easyui-datagrid" toolbar="#tb">
+                        <thead>
+                            <tr>
+                                <th data-options="field:'id',width:80,sortable:true">ID</th>
+                                <th data-options="field:'contato',width:110,sortable:true">Contato</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                
+                <div title="Tab3" data-options="iconCls:'icon-reload',closable:true" style="display:none;">
+                    tab3
+                </div>
+            </div>
+        </section>
+    </div>
+    <div data-options="region:'center',title:''">
+        <section id="cliente-grid">
+            <table id="cliente-table" class="easyui-datagrid" title="Lista de Clientes">
+                <thead>
+                    <tr>
+                        <th data-options="field:'id',width:80,sortable:true">ID</th>
+                        <th data-options="field:'nome',width:110,sortable:true">Cliente</th>
+                        <th data-options="field:'endereco',width: 250,align:'left',sortable:true,">Endereço</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript" src="app/controllers/clientesCtrl.js"></script>

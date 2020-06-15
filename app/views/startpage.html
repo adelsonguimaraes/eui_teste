@@ -1,0 +1,16 @@
+<script>
+    var usuario = window.sessionStorage.getItem('usuario');
+    
+    setTimeout(() => {
+        console.log(usuario);
+        if (usuario == null) {
+            $('#main').panel({
+                href:'app/views/login.html',
+            })
+        }else{
+            $('#main').panel({
+                href:'app/views/viewport.html',
+            })
+        }
+    }, 1000);
+</script>
